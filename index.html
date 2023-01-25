@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>vue</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>Yoshingizni kiriting</h2>
+        <input type="text" v-model="yosh">
+        <p v-if="yosh == ''">Hali malumot kisitmadingiz</p>
+        <p v-else-if="yosh <= 0">Notogri malumot kirittiz</p>
+        <p v-else-if="yosh <= 3">Bolasiz hali bogchaga olishmiydiw</p>
+        <p v-else-if="yosh <= 6">Bogchaga bor</p>
+        <p v-else-if="yosh <= 17">Maktabda oqi</p>
+        <p v-else-if="yosh <= 22">ishla yoki oqi</p>
+        <p v-else-if="yosh <= 59">ishla</p>
+        <p v-else-if="yosh <= 103">pensiyanerga oxshaysiz tirik bolsangiz</p>
+        <p v-else-if="yosh > 103">Notogri malumot kirittiz</p>
+    </div>
+
+    <script>
+        const app = {
+            data() {
+                return {
+                    yosh:"",
+                }
+            }
+        }
+
+        Vue.createApp(app).mount("#app")
+    </script>
+
+</body>
+
+</html>
